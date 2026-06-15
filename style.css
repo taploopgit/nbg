@@ -1,4 +1,4 @@
-/* NBG Digital Profile - Manuel Flores Méndez */
+/* NBG Digital Profiles */
 
 :root {
   --red: #d71920;
@@ -18,7 +18,9 @@
 html,
 body {
   margin: 0;
+  width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: var(--text);
@@ -27,22 +29,26 @@ body {
 body {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .digital-profile {
-  width: 100%;
+  width: min(100%, 596px);
   max-width: 596px;
+  min-width: 0;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   background:
     url("img/nbg-background.png") top center / 100% auto no-repeat,
     #ffffff;
-  padding-top: 486px;
+  padding-top: clamp(306px, 81.55vw, 486px);
 }
 
 .profile-card {
-  width: calc(100% - 26px);
+  width: calc(100% - clamp(16px, 4.36vw, 26px));
+  max-width: 570px;
+  min-width: 0;
   margin: 0 auto 0;
   background: rgba(255, 255, 255, 0.96);
   border-radius: 28px 28px 0 0;
@@ -88,41 +94,63 @@ body {
 .save-contact {
   height: 59px;
   width: 100%;
+  min-width: 0;
   border-radius: 12px;
   background:
     radial-gradient(circle at 50% 50%, rgba(60, 60, 60, 0.34) 0%, rgba(60, 60, 60, 0.08) 26%, rgba(0, 0, 0, 0) 48%),
     linear-gradient(90deg, #111111 0%, #181818 50%, #111111 100%);
   color: #ffffff;
-  display: grid;
-  grid-template-columns: 1fr 1px 2fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 0 22px;
   text-decoration: none;
   font-size: 19px;
   font-weight: 500;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
 }
 
+.save-contact-content {
+  display: inline-grid;
+  grid-template-columns: auto 1px auto;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 100%;
+}
+
 .download-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
   font-size: 29px;
 }
 
 .save-contact .divider {
+  flex: 0 0 1px;
   height: 32px;
   width: 1px;
   background: rgba(255, 255, 255, 0.34);
 }
 
+.save-contact-label {
+  min-width: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .contact-list {
   display: grid;
+  min-width: 0;
   gap: 15px;
   margin-top: 21px;
 }
 
 .contact-item {
+  width: 100%;
   min-height: 86px;
+  min-width: 0;
   display: grid;
   grid-template-columns: 78px 1px minmax(0, 1fr) 28px;
   align-items: center;
@@ -215,15 +243,12 @@ body {
 
 @media (max-width: 480px) {
   .digital-profile {
-    max-width: 430px;
-    padding-top: 348px;
     background-size: 100% auto;
   }
 
   .profile-card {
-    width: calc(100% - 20px);
     border-radius: 24px 24px 0 0;
-    padding: 21px 24px 28px;
+    padding: 21px clamp(14px, 5vw, 24px) 28px;
   }
 
   .profile-header h1 {
@@ -244,7 +269,12 @@ body {
   .save-contact {
     height: 50px;
     border-radius: 10px;
+    padding: 0 14px;
     font-size: 15px;
+  }
+
+  .save-contact-content {
+    gap: 12px;
   }
 
   .download-icon {
@@ -319,13 +349,9 @@ body {
 }
 
 @media (max-width: 380px) {
-  .digital-profile {
-    padding-top: 306px;
-  }
-
   .profile-card {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .profile-header h1 {
@@ -333,7 +359,9 @@ body {
   }
 
   .contact-item {
-    grid-template-columns: 58px 1px minmax(0, 1fr) 22px;
+    grid-template-columns: 54px 1px minmax(0, 1fr) 20px;
+    padding-left: 7px;
+    padding-right: 7px;
   }
 
   .icon-square {
@@ -342,10 +370,19 @@ body {
   }
 
   .copy {
-    padding-left: 13px;
+    padding-left: 11px;
+    padding-right: 4px;
   }
 
   .copy span {
     font-size: 12px;
+  }
+
+  .save-contact {
+    padding: 0 10px;
+  }
+
+  .save-contact-content {
+    gap: 10px;
   }
 }
