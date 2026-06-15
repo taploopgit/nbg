@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Flores Méndez;Manuel;;;
+FN:Manuel Flores Méndez
+ORG:NBG Technologies, Inc.;Niples Birlos Galvanizados S.A. de C.V.
+TITLE:Ing Diseño y Control Inventarios
+EMAIL;TYPE=INTERNET,WORK:manuel.flores@nbgsadecv.com.mx
+TEL;TYPE=CELL,VOICE:+528130890510
+TEL;TYPE=WORK,VOICE:+5281400201
+URL:https://nbgmx.com
+URL:https://www.linkedin.com/in/nbg-niples-birlos-galvanizados-0838162b4/
+ADR;TYPE=WORK:;;Calle Fuego 104 Parque Industrial Dínamo;Salinas Victoria;Nuevo León;65500;México
+END:VCARD

@@ -1,0 +1,351 @@
+/* NBG Digital Profile - Manuel Flores Méndez */
+
+:root {
+  --red: #d71920;
+  --black: #111111;
+  --text: #171717;
+  --muted: #6f6f6f;
+  --card: #ffffff;
+  --row: rgba(255, 255, 255, 0.92);
+  --line: #e7e7e7;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--text);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.digital-profile {
+  width: 100%;
+  max-width: 596px;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background:
+    url("img/nbg-background.png") top center / 100% auto no-repeat,
+    #ffffff;
+  padding-top: 486px;
+}
+
+.profile-card {
+  width: calc(100% - 26px);
+  margin: 0 auto 0;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px 28px 0 0;
+  min-height: 620px;
+  padding: 25px 28px 34px;
+  position: relative;
+  box-shadow:
+    0 -8px 28px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+.profile-header {
+  text-align: center;
+  padding: 0 2px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 35px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #050505;
+}
+
+.profile-header p {
+  margin: 13px 0 0;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--red);
+  font-weight: 500;
+}
+
+.red-line {
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: var(--red);
+  border-radius: 999px;
+  margin: 17px auto 20px;
+}
+
+.save-contact {
+  height: 59px;
+  width: 100%;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(60, 60, 60, 0.34) 0%, rgba(60, 60, 60, 0.08) 26%, rgba(0, 0, 0, 0) 48%),
+    linear-gradient(90deg, #111111 0%, #181818 50%, #111111 100%);
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1px 2fr;
+  align-items: center;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+.download-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 29px;
+}
+
+.save-contact .divider {
+  height: 32px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.contact-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 21px;
+}
+
+.contact-item {
+  min-height: 86px;
+  display: grid;
+  grid-template-columns: 78px 1px minmax(0, 1fr) 28px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--row);
+  border-radius: 16px;
+  padding: 12px 13px 12px 13px;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.018);
+}
+
+.icon-square {
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  justify-self: center;
+  font-size: 31px;
+}
+
+.icon-square.red {
+  background: var(--red);
+}
+
+.icon-square.black {
+  background: #171717;
+}
+
+.icon-square.linkedin {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.icon-square .fa-mobile {
+  font-size: 43px;
+}
+
+.icon-square .fa-map-marker {
+  font-size: 39px;
+}
+
+.icon-square .fa-phone {
+  font-size: 36px;
+}
+
+.icon-square .fa-globe {
+  font-size: 35px;
+}
+
+.item-divider {
+  width: 1px;
+  height: 52px;
+  background: var(--line);
+}
+
+.copy {
+  min-width: 0;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.copy strong {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.copy span {
+  color: #222222;
+  font-size: 15.5px;
+  line-height: 1.22;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.arrow {
+  justify-self: center;
+  color: #030303;
+  font-size: 28px;
+}
+
+@media (max-width: 480px) {
+  .digital-profile {
+    max-width: 430px;
+    padding-top: 348px;
+    background-size: 100% auto;
+  }
+
+  .profile-card {
+    width: calc(100% - 20px);
+    border-radius: 24px 24px 0 0;
+    padding: 21px 24px 28px;
+  }
+
+  .profile-header h1 {
+    font-size: 26px;
+  }
+
+  .profile-header p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .red-line {
+    width: 42px;
+    height: 3px;
+    margin: 14px auto 17px;
+  }
+
+  .save-contact {
+    height: 50px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .download-icon {
+    font-size: 24px;
+  }
+
+  .save-contact .divider {
+    height: 28px;
+  }
+
+  .contact-list {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .contact-item {
+    min-height: 73px;
+    grid-template-columns: 64px 1px minmax(0, 1fr) 24px;
+    border-radius: 14px;
+    padding: 10px 9px;
+  }
+
+  .icon-square {
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    font-size: 27px;
+  }
+
+  .icon-square.linkedin {
+    font-size: 31px;
+  }
+
+  .icon-square .fa-mobile {
+    font-size: 38px;
+  }
+
+  .icon-square .fa-map-marker {
+    font-size: 34px;
+  }
+
+  .icon-square .fa-phone {
+    font-size: 32px;
+  }
+
+  .icon-square .fa-globe {
+    font-size: 31px;
+  }
+
+  .item-divider {
+    height: 47px;
+  }
+
+  .copy {
+    padding-left: 16px;
+    padding-right: 7px;
+    gap: 4px;
+  }
+
+  .copy strong {
+    font-size: 14.5px;
+  }
+
+  .copy span {
+    font-size: 13px;
+    line-height: 1.20;
+  }
+
+  .arrow {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .digital-profile {
+    padding-top: 306px;
+  }
+
+  .profile-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .profile-header h1 {
+    font-size: 23px;
+  }
+
+  .contact-item {
+    grid-template-columns: 58px 1px minmax(0, 1fr) 22px;
+  }
+
+  .icon-square {
+    width: 46px;
+    height: 46px;
+  }
+
+  .copy {
+    padding-left: 13px;
+  }
+
+  .copy span {
+    font-size: 12px;
+  }
+}
